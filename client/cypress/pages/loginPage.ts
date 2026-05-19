@@ -6,11 +6,8 @@ class LoginPage {
     // Mapeamento dos seletores da página de login
     selectorsList() {
         const selectors = {
-            loginButton:     'button',
             emailField:      '[data-cy="email"]',
             passwordField:   '[data-cy="password"]',
-            submitButton:    'button',
-            logoutButton:    'button',
             errorMessage:    '.text-red-500',
         }
         return selectors
@@ -23,7 +20,7 @@ class LoginPage {
 
     // Abre o modal de login
     openLoginModal() {
-        cy.contains(this.selectorsList().loginButton, 'Login').click()
+        cy.contains('button', 'Login').click()
     }
 
     // Realiza login com qualquer usuário válido
@@ -31,21 +28,21 @@ class LoginPage {
         this.openLoginModal()
         cy.get(this.selectorsList().emailField).type(email)
         cy.get(this.selectorsList().passwordField).type(password)
-        cy.contains(this.selectorsList().submitButton, 'Sign in').click()
+        cy.contains('button', 'Sign in').click()
     }
 
     // Realiza login sem email
     loginWithoutEmail(password: string) {
         this.openLoginModal()
         cy.get(this.selectorsList().passwordField).type(password)
-        cy.contains(this.selectorsList().submitButton, 'Sign in').click()
+        cy.contains('button', 'Sign in').click()
     }
 
     // Realiza login sem senha
     loginWithoutPassword(email: string) {
         this.openLoginModal()
         cy.get(this.selectorsList().emailField).type(email)
-        cy.contains(this.selectorsList().submitButton, 'Sign in').click()
+        cy.contains('button', 'Sign in').click()
     }
 
     // Verifica mensagem de erro
@@ -55,7 +52,7 @@ class LoginPage {
 
     // Verifica se está logado
     verifyLoggedIn() {
-        cy.contains(this.selectorsList().logoutButton, 'Logout').should('be.visible')
+        cy.contains('button', 'Logout').should('be.visible')
     }
 }
 
