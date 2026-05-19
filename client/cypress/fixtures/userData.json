@@ -1,0 +1,18 @@
+{
+    "userSuccess": {
+        "email": "test@test.com",
+        "password": "test123"
+    },
+    "adminUser": {
+        "email": "admin@test.com",
+        "password": "test123"
+    },
+    "userInvalidEmail": {
+        "email": "invalido",
+        "password": "test123"
+    },
+    "userWrongPassword": {
+        "email": "test@test.com",
+        "password": "errada"
+    }
+}
