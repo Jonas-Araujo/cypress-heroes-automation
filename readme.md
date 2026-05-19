@@ -1,58 +1,51 @@
-# Cypress Heroes Demo Application
+# Aplicação de Demonstração Cypress Heroes
 
-This is a demo application that shows how to use Cypress to run end-to-end,
-component, and API tests against an application.
+Esta é uma aplicação de demonstração que mostra como usar o Cypress para executar testes end-to-end (E2E), de componentes e de API em uma aplicação.
 
-## Getting Started
+## Primeiros Passos
 
-The app is a mono repo that uses npm workspaces. Once you clone the project,
-install the dependencies at the root folder:
+A aplicação é um monorepo que usa npm workspaces. Depois de clonar o projeto, instale as dependências na pasta raiz:
 
 ```sh
 npm install
 ```
 
-After that a few more things need to be set up (databases and such), to do so run:
+Depois disso, algumas outras coisas precisam ser configuradas (bancos de dados e similares). Para isso, execute:
 
 ```sh
 npm run setup
 ```
 
-
-To launch the app for development, run:
+Para iniciar a aplicação em modo de desenvolvimento, execute:
 
 ```sh
 npm run dev
 ```
 
-This will start both the client and server apps in dev mode. The site will be
-available at http://localhost:3000.
+Isso iniciará tanto o cliente quanto o servidor em modo dev. O site ficará disponível em http://localhost:3000.
 
-## App Overview
+## Visão Geral da Aplicação
 
-The Cypress Heroes app consists of a frontend client app written in React that
-uses Vite, as well as a backend app that uses NestJS.
+A aplicação Cypress Heroes consiste em um app cliente frontend escrito em React que usa Vite, além de um app backend que usa NestJS.
 
 ### React Client App
 
-The React client app is located in the **client** folder. It is a standard React [Vite](https://vitejs.dev/) app.
+A aplicação cliente React está localizada na pasta client. Ela é uma aplicação React padrão usando [Vite](https://vitejs.dev/) app.
 
-Todo: fill out
+Todo: detalhar mais
 
 ### NestJS Server App
 
-The server app is in the **server** folder. It is built with the [NestJS](https://nestjs.com/) Node.js framework. It uses [Prisma](https://www.prisma.io/) for the database ORM.
+A aplicação servidor fica na pasta **server**. Ela é construída com o framework [NestJS](https://nestjs.com/) Node.js. Ela utiliza o [Prisma](https://www.prisma.io/) como ORM de banco de dados.
 
-#### Database seeding and resetting
+#### Seed do banco de dados e reset
 
-The database is seeded from the **server/prisma/seed.ts** script when you set up the app. If at any time you want to reset the database back to its initial state, run:
+O banco de dados é populado (seed) pelo script **server/prisma/seed.ts** quando você configura a aplicação. Se em algum momento você quiser redefinir o banco para o estado inicial, execute:
 
 ```sh
 npm run resetdb
 ```
 
-## Environment Variables
+## Variáveis de Ambiente
 
-The client app uses an environment variable to know what the URL is for the
-backend api named `VITE_API_URL`. It defaults to "http://localhost:3001" for use
-in dev mode, and should be overriden in other environments/modes.
+A aplicação cliente usa uma variável de ambiente para saber qual é a URL da API do backend chamada `VITE_API_URL`. O padrão é "http://localhost:3001" para uso em modo de desenvolvimento, e deve ser sobrescrito em outros ambientes/modos.
